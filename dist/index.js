@@ -23404,6 +23404,8 @@ const github = __importStar(__webpack_require__(469));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            // The pull_request exists on payload when a pull_request event is triggered.
+            // Sets action status to failed when pull_request does not exist on payload.
             const pr = github.context.payload
                 .pull_request;
             if (!pr) {
@@ -23420,6 +23422,7 @@ function run() {
             const owner = github.context.repo.owner;
             const repo = github.context.repo.repo;
             // Create a comment on PR
+            // https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
             const response = yield client.issues.createComment({
                 owner,
                 repo,

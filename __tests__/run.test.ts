@@ -8,7 +8,7 @@ beforeEach(() => {
   jest.resetModules()
 
   github.context.payload = {
-    actino: 'opened',
+    action: 'opened',
     pull_request: {
       number: 1
     }

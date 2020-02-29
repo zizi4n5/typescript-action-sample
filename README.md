@@ -28,5 +28,5 @@ The PR comment URL.
 uses: zizi4n5/typescript-action-sample@v1.0.0
 with:
   repo-token: ${{ secrets.GITHUB_TOKEN }}
-  message: Nice PR!
+  message: Nice PR!👍
 ```

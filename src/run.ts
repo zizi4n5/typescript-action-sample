@@ -4,6 +4,8 @@ import * as Webhooks from '@octokit/webhooks'
 
 export async function run(): Promise<void> {
   try {
+    // The pull_request exists on payload when a pull_request event is triggered.
+    // Sets action status to failed when pull_request does not exist on payload.
     const pr = github.context.payload
       .pull_request as Webhooks.WebhookPayloadPullRequest
     if (!pr) {
@@ -24,6 +26,7 @@ export async function run(): Promise<void> {
     const repo = github.context.repo.repo
 
     // Create a comment on PR
+    // https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
     const response = await client.issues.createComment({
       owner,
       repo,

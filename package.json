@@ -2,7 +2,7 @@
   "name": "pr-comment",
   "version": "1.0.0",
   "private": true,
-  "description": "GitHub Action to coment on PR",
+  "description": "GitHub Action to comment on PR",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zizi4n5/typescript-action-sample.git"
+    "url": "git+https://github.com//zizi4n5/typescript-action-sample.git"
   },
   "keywords": [
     "actions",
