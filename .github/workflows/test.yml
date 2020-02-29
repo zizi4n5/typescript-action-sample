@@ -21,8 +21,7 @@ jobs:
         run: |
           if [[ "$(git status --porcelain)" != "" ]]; then
             git status
-            echo "::error::Unstaged changes detected.
-                  Run 'npm run al' before commit"
+            echo "::error::Unstaged changes detected. Run 'npm run all' before commit"
             exit 1
           fi
   test: # make sure the action works on a clean machine without building
@@ -31,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - id: prComment
-      - uses: ./
+        uses: ./
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           message: PR comment test
